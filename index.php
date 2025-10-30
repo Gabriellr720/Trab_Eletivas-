@@ -1,5 +1,5 @@
 <?php
-    
+
 ?>
 
 <!DOCTYbuttonE html>
@@ -11,22 +11,18 @@
     <title>Cadastro</title>
 </head>
 <body>
-    <header>
-        <h1>The Gastronomy</h1>
-    </header>
-
     <main>
         <section class="f2">
             <section class="f1"> 
                 <h3>Cadastro </h3>
-                <form>
+                <form method="$_POST" action="../processamento/processamento.php">
                     <input type="text" id="email" placeholder="Email" name="email">
                     <input type="password" id="password" placeholder="Senha" name="password">
-                   
-                </form>
-                <section class="f4">
-                    <button class="btn-login" type="submit"><a href="view/Home.HTML">ENTRE</a></button>
+                   <section class="f4">
+                    <button class="btn-login" type="submit"><a href="">ENTRE</a></button>
                 </section>
+                </form>
+                
             </section>
         </section>
     </main>
