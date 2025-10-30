@@ -1,0 +1,286 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.secao_1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 12px;
+    padding-bottom: 10px;
+}
+
+.secao_1 h1 {
+    padding-left: 22%;
+}
+
+#article-login {
+    padding-top: 16px;
+    padding-right: 0;
+}
+
+#article-login img{
+    width: 25px;
+    height: 25px;
+    padding: 12px 10px 0 0;
+}
+
+#article-login a{
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    color: #000000;
+}
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style: none;
+    padding: 5px 10px;
+    width: 60vw;
+    
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: small;
+}
+
+nav ul li a:link, a:visited {
+    color: #000000;
+}
+
+nav ul li a:hover {
+    color: #313131d2;
+}
+/*Fim do style do header*/
+/*Início do style das partições main*/
+#secao_title_receitas { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    background-color: #F8F6EF;
+    padding-bottom: 40px;
+}
+
+#secao_title_receitas h2{ 
+    color: #838c42;
+    margin-bottom: 0;
+}
+
+#secao_title_receitas p{ 
+    color: #313131d2;
+}
+
+.categorias {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 80vw;
+    align-items: center;
+    text-align: center;
+    margin-left: 10vw;
+}
+
+.categorias img {
+    border-radius: 200px;
+}
+
+.categorias p{
+    color: #313131d2;
+    font-size:medium;
+
+}
+
+.categorias a{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+/*Estilizando seção em alta*/
+.divisoria p {
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    text-align: center;
+    margin: 20px 0;
+    color: #838c42;
+    font-weight: bold;
+    font-size: large;
+}
+
+.divisoria p::before {
+    content: ''; 
+    flex-grow: 1; 
+    height: 1px;
+    background-color: #ccc;
+    max-width: 40%;
+    margin-right: 10px; 
+}
+
+.divisoria p::after {
+    content: ''; 
+    flex-grow: 1;
+    height: 1px;
+    background-color: #ccc;
+    max-width: 40%;
+    margin-left: 10px; 
+}
+
+.em-alta-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+    width: min-content;
+    margin: auto;
+}
+
+.em-alta-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: min-content;
+    margin: 15px;
+    text-align: justify;
+    border: 1px solid #d6d5d5;
+}
+
+.em-alta-card a {
+    text-decoration: none;
+    color: #313131d2;
+    width: 100%;
+    height: 100%;
+}
+
+.em-alta-card a img {
+    width: 290px;
+    height: 288px;
+}
+
+.em-alta-card p:nth-of-type(1) {
+    font-weight: bolder;
+    text-align: center;
+}
+
+.em-alta-card p:nth-of-type(2) {
+    font-size: small;
+    padding: 20px;
+}
+/*Estilizando seção comunidade*/
+.comunidade-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.comunidade-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #d6d5d5;
+    margin: 10px;
+    padding: 20px;
+    width: 50%;
+    background-color: #ffffff;
+    
+}
+
+.cabecalho-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.cabecalho-card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 200px;
+}
+
+.cabecalho-card p:nth-of-type(1) {
+    font-weight: bold;
+    padding: 0 0 0 10px;
+    margin: 0;
+    max-width: 110px;
+}
+
+.cabecalho-card p:nth-of-type(2) {
+    color: #313131d2;
+    font-size: small;
+    padding-left: 32vw;
+    margin: 0;
+}
+
+.comentario {
+    color: #313131d2;
+    font-size: 2.2vh;
+    margin: 5px;
+    padding: 5px;
+    max-width: 45vw;
+}
+
+.like-comentario {
+    width: 2vw;
+    margin: 0;
+    padding: 0;
+}
+
+.like-comentario:hover {
+    cursor:pointer;
+}
+/*Estilizando o footer*/
+.cadastro-email {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    background-color: #B03A2E;
+    width: 35vw;
+    height: 33vh;
+    margin: 120px 20px 30px;
+    padding: 10px;
+}
+
+.cadastro-email input {
+    margin: 20px;
+    padding: 8px;
+}
+
+.cadastro-email button {
+    margin: 10px 20px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid #B03A2E;
+}
+
+.cadastro-email button:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.cadastro-email p {
+    color: #ffffff;
+    font-weight: bolder;
+    text-align: center;
+}
+
+footer {
+    background-image: url(../img/banner.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
