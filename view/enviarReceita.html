@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon.png">
+    <link rel="stylesheet" href="../assets/css/enviarReceita.css">
+    <title>Envie sua Receita</title>
+</head>
+<body>
+    <h1>CADASTRO DE RECEITAS</h1>
+    <main>
+        <form action="" method="post">
+        <div class="cadastro-receita">
+            <input type="text" name="nomePessoa" id="nome-pessoa" placeholder="Nome*:">
+            <input type="text" id="nome_receita" name="nomeReceita" placeholder="Nome da Receita:">
+            <input type="text" name="dificuldadeReceita" id="dificuldade-Receita" placeholder="Dificuldade* Ex: Fácil/Médio/Difícil">
+            <input type="text" name="porcaoReceita" id="porcao-receita" placeholder="Rendimento em Porções* Ex: 5">
+            <textarea name="ingredientes" id="ingredientes-receita" cols="30" rows="20" placeholder="Ingredientes da receita 1 por linha:"></textarea>
+        </div>
+        <div class="cadastro-receita">
+            <textarea name="modoPreparo" id="modo-preparo" cols="30" rows="20" placeholder="Modo de preparo:"></textarea>
+            <label for="foto-receita" id="anexar-fotos">Anexar Fotos:</label>
+            <input type="file" name="foto-receita" accept="image/png, image/jpeg" multiple id="btn-foto">
+            <div class="btn-receita">
+                <input type="reset" value="Limpar" id="btn-reset">
+                <input type="submit" value="Enviar Receita" id="btn-enviar">
+                <a href="home.html">Voltar</a>
+            </div>
+        </div>
+        
+    </form>
+    </main>
+</body>
+</html>
