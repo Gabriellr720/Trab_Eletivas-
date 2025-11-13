@@ -14,7 +14,7 @@
 <body>
 
     <main>
-        <p class ="p01">The Gastroner</p>
+        <p class ="p01">Murango cakes</p>
         <section class="login-container">
             <h2>Login da Conta</h2>
             
