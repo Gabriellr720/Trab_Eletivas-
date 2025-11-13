@@ -1,0 +1,99 @@
+body {
+    background-color: rgb(247, 247, 247);
+    margin: 0;
+    margin-left: 23vw;
+    padding: 0;
+    font-family: 'Verdana', 'Geneva', 'Tahoma', sans-serif;
+    min-height: 100vh;
+}
+
+nav {
+    background-color: rgb(240, 240, 195);
+    width: 280px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0 20px 0;
+    background-color: rgb(240, 240, 195);
+}
+
+.logo img:nth-of-type(1) {
+    width: 140px;
+    height: auto;
+}
+
+.logo img:nth-of-type(2) {
+    width: 170px;
+    height: auto;
+    margin-top: -10px;
+}
+
+.menu-vertical {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.menu-vertical li {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    padding-bottom: 0;
+}
+
+.menu-vertical li a {
+    text-decoration: none;
+    background-color: rgb(255, 255, 255);
+    color: #444444;
+    padding: 12px 20px;
+    width: 80%;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease-in-out;
+}
+
+.menu-vertical li a:hover {
+    background-color: rgb(196, 28, 28);
+    color: rgb(255, 255, 255);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+/*APAGAR DAQUI PRA BAIXO*/
+.exemplo {
+    width: 40vw;
+    border-radius: 15px;
+    margin-left: 14vw;
+    margin-top: 12vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.p {
+    text-align: left;
+}
+
+.exemplo img {
+    width: 220px;
+    height: 200px;
+    border-radius: 200px;
+}
+

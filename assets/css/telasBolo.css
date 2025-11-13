@@ -1,0 +1,74 @@
+body {
+    background-color: rgb(240, 240, 195);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    background-color: rgb(240, 240, 195);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    max-width: 50vw;
+    padding: 10px 40px;
+    margin-right: 21vw;
+    box-shadow: 0 0px 25px rgba(207, 62, 62, 0.5);
+}
+
+
+h1, h2 {
+    color: rgb(196, 28, 28);
+}
+
+p {
+    color: rgb(204, 43, 43);
+    font-style: italic;
+    font-weight: bold;
+}
+
+.title {
+    text-align: center;
+}
+
+.title img {
+    border-radius: 15px;
+    width: 250px;
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background-color: rgb(196, 28, 28); 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#Chocolate-Bolo4 {
+    color: rgb(110, 75, 58);
+}
+
+li {
+    text-align: justify;
+}
+
+a {
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 1px solid rgb(196, 28, 28);
+    background-color: #fff ;
+    color: rgb(196, 28, 28);
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 40px;
+    margin: 20px;
+    padding: 14px;
+    max-height: 15px;
+    max-width: 80px;
+    cursor: pointer;
+}
+
+a:hover {
+    background-color: rgb(196, 28, 28);
+    color: #fff;
+}
