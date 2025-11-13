@@ -13,6 +13,24 @@
         mysqli_query($conexao, $consulta); 
     }
 
+    function inserirComentario($comentario){
+
+        $conexao = conectarBD(); 
+
+        $consulta = "INSERT INTO inserecomentario (comentario) 
+                    VALUES ('$comentario')";
+        mysqli_query($conexao, $consulta); 
+    }
+
+    function retornarComentario(){
+
+        $conexao = conectarBD();
+        $consulta = "SELECT * FROM inserecomentario"; 
+        $listaComentario = mysqli_query($conexao, $consulta); 
+        return $listaComentario; 
+    }
+
+
     function retornarCliente(){
 
         $conexao = conectarBD();

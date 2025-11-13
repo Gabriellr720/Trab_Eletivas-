@@ -14,11 +14,20 @@
         $senha = $_POST['inputSenha'];
         $dataNasc = $_POST['inputDataNasc'];
 
-        echo "CPF". $cpf. "Nome". $nome."Sobrenome". $sobrenome."Telefone". $telefone. "Email". $email. "Senha". $senha. "Data de nascimento". $dataNasc; 
+        //echo "CPF". $cpf. "Nome". $nome."Sobrenome". $sobrenome."Telefone". $telefone. "Email". $email. "Senha". $senha. "Data de nascimento". $dataNasc; 
 
         inserirCliente($cpf, $nome, $sobrenome, $telefone, $email, $senha, $dataNasc);
     
         header('location:cadastroUsuario.php');
+        die(); 
+    }
+
+    if(!empty($_POST['inputComentario'])){
+
+        $comentario = $_POST['inputComentario']; 
+
+        inserirComentario($comentario);
+        header('location:cadastrarComentario.php');
         die(); 
     }
 ?>
