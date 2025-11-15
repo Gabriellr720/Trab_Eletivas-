@@ -24,6 +24,7 @@
     <meta charset="UTF-8">
     <title>Cadastro de Ingredientes para Inspiração</title>
     <link rel="stylesheet" href="../assets/css/cadastrarIngredientes.css"> 
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon.png">
 </head>
 <body>
 

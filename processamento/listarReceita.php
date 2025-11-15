@@ -14,7 +14,7 @@ $receitas = listarTodasReceitas();
     </head>
 <body>
     <div class="header">
-        <a href="../view/home.html">Voltar</a>
+        <a href="../view/meuUsuario.html">Voltar</a>
         <h1>📋 Receitas Cadastradas</h1>
     </div>
     <?php if (empty($receitas)): ?>
