@@ -84,4 +84,48 @@
     $conn->close();
     return $receitas;
 }
+
+function inserirIngredientesInspiracao($ing1, $ing2, $ing3, $ing4, $ing5, $ing6) {
+    $conexao = conectarBD();
+
+    $consulta = "INSERT INTO ingredientes_inspiracao (ingrediente1, ingrediente2, ingrediente3, ingrediente4, ingrediente5, ingrediente6)
+                 VALUES ('$ing1', '$ing2', '$ing3', '$ing4', '$ing5', '$ing6')";
+
+    $resultado = mysqli_query($conexao, $consulta);
+
+    if (!$resultado) {
+        die("Erro ao inserir ingredientes: " . mysqli_error($conexao));
+    }
+
+    mysqli_close($conexao);
+}
+
+function listarIngredientesInspiracao() {
+    $conn = conectarBD(); 
+    $ingredientes = [];
+    
+    $sql = "SELECT 
+                id, 
+                ingrediente1, 
+                ingrediente2, 
+                ingrediente3, 
+                ingrediente4, 
+                ingrediente5, 
+                ingrediente6 
+            FROM 
+                ingredientes_inspiracao 
+            ORDER BY 
+                id DESC"; 
+    
+    $result = $conn->query($sql);
+    
+    if ($result && $result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            $ingredientes[] = $row;
+        }
+    }
+    $conn->close(); 
+    return $ingredientes;
+}
+
 ?>

@@ -13,8 +13,10 @@ $receitas = listarTodasReceitas();
     <title>Receitas Cadastradas</title>
     </head>
 <body>
-    <h1>📋 Receitas Cadastradas</h1>
-    
+    <div class="header">
+        <a href="../view/home.html">Voltar</a>
+        <h1>📋 Receitas Cadastradas</h1>
+    </div>
     <?php if (empty($receitas)): ?>
         <p>Ainda não há receitas cadastradas.</p>
     <?php else: ?>
@@ -51,9 +53,7 @@ $receitas = listarTodasReceitas();
         <?php endforeach; ?>
     </tbody>
 </table>
+    <p class="aviso"> Em processo de análise. Após a validação, enviaremos um e-mail para você.</p>
     <?php endif; ?>
-    <div class="btn">
-        <a href="../view/home.html">Voltar para a Home</a>
-    </div>
 </body>
 </html>

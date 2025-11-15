@@ -1,0 +1,97 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(240, 240, 195);
+    color: rgb(51, 51, 51);
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.header {
+    width: 90%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgb(196, 28, 28);
+}
+
+.header a {
+    text-decoration: none;
+    background-color: rgb(196, 28, 28);
+    color: rgb(255, 255, 255);
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.header a:hover {
+    background-color: rgb(150, 20, 20);
+}
+
+h1 {
+    color: rgb(196, 28, 28);
+    font-size: 2em;
+    margin: 0;
+}
+
+.ingredientes-tabela {
+    width: 90%;
+    max-width: 1000px;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgb(255, 255, 255);
+}
+
+.ingredientes-tabela thead tr {
+    background-color: rgb(196, 28, 28);
+    color: rgb(255, 255, 255);
+}
+
+.ingredientes-tabela th, .ingredientes-tabela td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid rgb(221, 221, 221);
+}
+
+.ingredientes-tabela tbody tr:nth-child(even) {
+    background-color: rgb(240, 240, 195);
+}
+
+.ingredientes-tabela tbody tr:hover {
+    background-color: rgb(230, 230, 180);
+    cursor: default;
+}
+
+.aviso {
+    background-color: rgb(255, 255, 255);
+    color: rgb(196, 28, 28);
+    border: 1px solid rgb(196, 28, 28);
+    font-weight: bold;
+    padding: 15px;
+    max-width: 600px;
+}
+
+@media (max-width: 768px) {
+    .ingredientes-tabela, .header {
+        width: 100%;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .header a {
+        margin-top: 10px;
+    }
+}
