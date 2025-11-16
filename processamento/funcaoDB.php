@@ -38,4 +38,31 @@
         $listaCliente = mysqli_query($conexao, $consulta); 
         return $listaCliente; 
     }
+
+    function deletarCliente($cpf){
+        $conexao = conectarBD();
+        // Deleta o usuário baseado no CPF
+        $consulta = "DELETE FROM usuario WHERE cpf = '$cpf'";
+        mysqli_query($conexao, $consulta);
+    }
+
+
+    // --- FUNÇÃO PARA ATUALIZAR (UPDATE) ---
+    function atualizarCliente($cpfAntigo, $cpfNovo, $nome, $sobrenome, $telefone, $email, $senha, $dataNasc){
+        $conexao = conectarBD();
+        // A senha deve ser HASHED (e.g., password_hash) antes de atualizar
+        $consulta = "UPDATE usuario SET 
+                    cpf = '$cpfNovo', 
+                    nome = '$nome', 
+                    sobrenome = '$sobrenome', 
+                    telefone = '$telefone', 
+                    email = '$email', 
+                    senha = '$senha', 
+                    dataNasc = '$dataNasc'
+                    WHERE cpf = '$cpfAntigo'";
+        mysqli_query($conexao, $consulta); 
+    }
+
+
+
 ?>

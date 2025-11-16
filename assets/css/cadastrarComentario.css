@@ -1,0 +1,92 @@
+/* --- Estilos Gerais --- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(240, 240, 195);
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem; /* Usar rem para acessibilidade */
+    color: rgb(196, 28, 28);
+    margin-top: 2rem;
+}
+
+/* --- Container Principal --- */
+/* Esta classe vai organizar o formulário e o botão */
+.cadastro-receita {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box; /* Garante que o padding não quebre o layout */
+}
+
+/* --- Formulário Interno --- */
+/* Precisamos forçar o <form> interno a ser uma coluna */
+.cadastro-receita form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Ocupa a largura para centralizar o conteúdo */
+}
+
+/* --- Label (Comentário do Usuário) --- */
+.cadastro-receita label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 10px; /* Espaço entre o label e a caixa de texto */
+}
+
+/* --- Caixa de Texto (Textarea) --- */
+.cadastro-receita textarea {
+    border: 1px solid #ccc; /* Borda mais suave */
+    border-radius: 12px; /* Menos arredondado */
+    margin-bottom: 20px; /* Espaço para o botão */
+    
+    /* Padding mais razoável */
+    padding: 15px 20px; 
+    
+    /* Tamanho responsivo */
+    width: 80%;
+    max-width: 600px; /* Limite para telas grandes */
+    min-height: 150px; /* Melhor que "rows" */
+    font-size: 1rem;
+    box-sizing: border-box; /* Padding não "aumenta" o width */
+}
+
+/* Foco na caixa de texto */
+.cadastro-receita textarea:focus {
+    outline: none;
+    border-color: rgb(196, 28, 28);
+    box-shadow: 0 0 5px rgba(196, 28, 28, 0.5);
+}
+
+
+/* --- Botão Cadastrar --- */
+/* O botão está FORA do <form> interno, por isso o alinhamento quebra.
+   Mas como ambos estão dentro do .cadastro-receita (flex-column),
+   o CSS acima já vai alinhá-los em coluna. Agora só precisamos estilizar. */
+form + button[type="submit"] { /* Seleciona o botão logo após o form */
+    background-color: rgb(196, 28, 28);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Efeito hover no botão */
+form + button[type="submit"]:hover {
+    background-color: rgb(160, 20, 20); /* Tom mais escuro */
+    transform: scale(1.03); /* Leve "salto" */
+}
+
+/* Remove a regra 'form' genérica que estava atrapalhando */
+
