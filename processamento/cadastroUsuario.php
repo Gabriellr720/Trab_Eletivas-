@@ -10,7 +10,7 @@
 <body>
    <header>
         <section class="logo">
-            <a href="../view/meuUsuario.html" class="btn1"><b>VOLTAR</b></a>
+            <a href="../index.php" class="btn1"><b>VOLTAR</b></a>
             <img src="../assets/img/logo.png" alt="">
             <img src="../assets/img/fonteLogo.png" alt="">
             <article id="article-login">
