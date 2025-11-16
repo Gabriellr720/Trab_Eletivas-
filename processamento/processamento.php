@@ -22,14 +22,51 @@
         die(); 
     }
 
-    if(!empty($_POST['inputComentario'])){
+ if(!empty($_POST['inputComentario'])){
 
         $comentario = $_POST['inputComentario']; 
 
         inserirComentario($comentario);
         header('location:cadastrarComentario.php');
-        die(); 
+        exit(); 
     }
+
+
+    if (isset($_POST['acao']) && $_POST['acao'] == 'login' && isset($_POST['cpf_email']) && isset($_POST['senha'])) {
+        
+        $cpfOuEmail = $_POST['cpf_email'];
+        $senha = $_POST['senha'];
+        
+        $usuario = verificarLogin($cpfOuEmail, $senha);
+        
+        if ($usuario) {
+            // Login bem-sucedido
+            $_SESSION['usuario_cpf'] = $usuario['cpf'];
+            $_SESSION['usuario_nome'] = $usuario['nome'];
+            $_SESSION['login_sucesso'] = '✅ Login realizado com sucesso! Bem-vindo(a), ' . $usuario['nome'] . '!';
+            
+            // Redireciona para a home page (ajuste o caminho se necessário)
+            header('location: view/home.php'); 
+            exit(); 
+        } else {
+            // Login falhou
+            $_SESSION['login_erro'] = '❌ CPF/Email ou Senha inválidos. Tente novamente.';
+            // Redireciona de volta para a página de login (ajustado para subir um diretório)
+            header('location: view/index.php'); 
+            exit();
+        }
+    }
+
+    // --- LÓGICA DE LOGOUT ---
+    if (isset($_POST['acao']) && $_POST['acao'] == 'logout') {
+        // Você precisa definir uma função fazerLogout() ou usar session_destroy()
+        session_destroy();
+        // Redireciona para a página de login com mensagem de sucesso
+        $_SESSION['login_sucesso'] = '✅ Logout realizado com sucesso!';
+        header('location: ../index.php'); // Ajustado para subir um diretório
+        exit();
+    }
+
 
 
     if(isset($_POST['acaoAtualizar']) && $_POST['acaoAtualizar'] == 'sim')
@@ -44,18 +81,18 @@
             $sobrenome = $_POST['inputSobrenome'];
             $telefone = $_POST['inputTelefone'];
             $email = $_POST['inputEmail'];
-            // Recomenda-se usar password_hash() para armazenar a senha de forma segura
+            // ALTERADO: A senha é usada em texto puro
             $senha = $_POST['inputSenha']; 
             $dataNasc = $_POST['inputDataNasc'];
 
             atualizarCliente($cpfAntigo, $cpfNovo, $nome, $sobrenome, $telefone, $email, $senha, $dataNasc);
 
             header('location:listarUsuario.php'); // Redireciona para a lista após a atualização
-            die();
+            exit();
         } else {
             // Tratar campos vazios na atualização se necessário
             header('location:editarUsuario.php?cpf=' . $_POST['cpfAntigo'] . '&erro=camposVazios');
-            die();
+            exit();
         }
     }
 
@@ -63,7 +100,7 @@
         $cpf = $_GET['cpf'];
         deletarCliente($cpf);
         header('location:listarUsuario.php?status=deletado'); // Redireciona de volta para a lista
-        die();
+        exit();
     }
 
 
@@ -76,7 +113,7 @@
         
         atualizarComentario($idComentario, $novoComentario);
         header('location:listarComentario.php?status=atualizado'); // Redireciona para a lista
-        die();
+        exit();
     }
 
     // ----------------------------------------------------------------------
@@ -86,7 +123,7 @@
         $idComentario = $_GET['id'];
         deletarComentario($idComentario);
         header('location:listarComentario.php?status=deletado'); 
-        die();
+        exit();
     }
 
     // ----------------------------------------------------------------------
@@ -96,7 +133,7 @@
         $idReceita = $_GET['id'];
         deletarReceita($idReceita);
         header('location:listarReceita.php?status=deletado'); 
-        die();
+        exit();
     }
 
     // ----------------------------------------------------------------------
@@ -106,7 +143,7 @@
         $id = $_GET['id'];
         deletarIngredientesInspiracao($id);
         header('location:listarIngredientes.php?status=deletado'); 
-        die();
+        exit();
     }
 
 ?>

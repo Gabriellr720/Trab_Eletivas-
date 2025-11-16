@@ -1,5 +1,5 @@
 <?php
-
+    session_start();
 ?>
 
 <!DOCTYbuttonE html>
@@ -34,6 +34,8 @@
            <section class="btn">
                 <button type="submit" id="cuzao"><a href="processamento/listarUsuario.php">ENTRE</a></button>
                 <button>CADASTRO</button>
+
+             
            </section>
         </section>
     </main>

@@ -4,23 +4,45 @@
         return ($conexao); 
     }
 
-    function inserirCliente($cpf, $nome, $sobrenome, $telefone, $email, $senha, $dataNasc){
+ function inserirCliente($cpf, $nome, $sobrenome, $telefone, $email, $senha, $dataNasc){
+        $conexao = conectarBD();
+        // ALTERADO: A senha é inserida em texto puro.
+        $stmt = mysqli_prepare($conexao, "INSERT INTO usuario (cpf, nome, sobrenome, telefone, email, senha, dataNasc)
+                                        VALUES (?, ?, ?, ?, ?, ?, ?)");
+        mysqli_stmt_bind_param($stmt, "sssssss", $cpf, $nome, $sobrenome, $telefone, $email, $senha, $dataNasc);
+        mysqli_stmt_execute($stmt); 
+        mysqli_stmt_close($stmt);
+        mysqli_close($conexao);
+    }
 
+    // NOVA FUNÇÃO: Verifica as credenciais de login
+    function verificarLogin($cpfOuEmail, $senha){
         $conexao = conectarBD();
         
-        $consulta = "INSERT INTO usuario (cpf, nome, sobrenome, telefone, email, senha, dataNasc)
-                    VALUES ('$cpf', '$nome', '$sobrenome', '$telefone', '$email', '$senha', '$dataNasc')"; 
-        mysqli_query($conexao, $consulta); 
+        // Tenta encontrar o usuário pelo CPF ou Email, e verifica se a senha é IGUAL.
+        // A consulta já inclui a senha para comparação direta no SQL.
+        $stmt = mysqli_prepare($conexao, "SELECT cpf, nome FROM usuario WHERE (cpf = ? OR email = ?) AND senha = ?");
+        mysqli_stmt_bind_param($stmt, "sss", $cpfOuEmail, $cpfOuEmail, $senha);
+        mysqli_stmt_execute($stmt);
+        $resultado = mysqli_stmt_get_result($stmt);
+        $usuario = mysqli_fetch_assoc($resultado);
+        
+        mysqli_stmt_close($stmt);
+        mysqli_close($conexao);
+        
+        if ($usuario) {
+            // Login bem-sucedido: retorna os dados essenciais do usuário
+            return [
+                'cpf' => $usuario['cpf'],
+                'nome' => $usuario['nome']
+            ];
+        }
+        // Login falhou
+        return false;
     }
 
-    function inserirComentario($comentario){
 
-        $conexao = conectarBD(); 
-
-        $consulta = "INSERT INTO inserecomentario (comentario) 
-                    VALUES ('$comentario')";
-        mysqli_query($conexao, $consulta); 
-    }
+   
 
     function retornarComentario(){
 
@@ -66,21 +88,26 @@
     }
 
 
-    // --- FUNÇÃO PARA ATUALIZAR (UPDATE) ---
     function atualizarCliente($cpfAntigo, $cpfNovo, $nome, $sobrenome, $telefone, $email, $senha, $dataNasc){
-        $conexao = conectarBD();
-        // A senha deve ser HASHED (e.g., password_hash) antes de atualizar
-        $consulta = "UPDATE usuario SET 
-                    cpf = '$cpfNovo', 
-                    nome = '$nome', 
-                    sobrenome = '$sobrenome', 
-                    telefone = '$telefone', 
-                    email = '$email', 
-                    senha = '$senha', 
-                    dataNasc = '$dataNasc'
-                    WHERE cpf = '$cpfAntigo'";
-        mysqli_query($conexao, $consulta); 
-    }
+    $conexao = conectarBD();
+    // ALTERADO: Recebe a senha em texto puro ($senha)
+    // Usando Prepared Statement para segurança (mantendo o básico)
+    $stmt = mysqli_prepare($conexao, "UPDATE usuario SET 
+                                      cpf = ?, 
+                                      nome = ?, 
+                                      sobrenome = ?, 
+                                      telefone = ?, 
+                                      email = ?, 
+                                      senha = ?, 
+                                      dataNasc = ?
+                                      WHERE cpf = ?");
+    
+    // ALTERADO: A senha é passada em texto puro para o DB
+    mysqli_stmt_bind_param($stmt, "ssssssss", $cpfNovo, $nome, $sobrenome, $telefone, $email, $senha, $dataNasc, $cpfAntigo);
+    mysqli_stmt_execute($stmt); 
+    mysqli_stmt_close($stmt);
+    mysqli_close($conexao);
+}
 
 
 
@@ -180,12 +207,7 @@ function inserirComentario($comentario){
         mysqli_query($conexao, $consulta); 
     }
 
-    function retornarComentario(){
-        $conexao = conectarBD();
-        $consulta = "SELECT * FROM inserecomentario"; 
-        $listaComentario = mysqli_query($conexao, $consulta); 
-        return $listaComentario; 
-    }
+    
 
     // U - Atualizar Comentário (Requer o ID do comentário)
     function atualizarComentario($idComentario, $novoComentario){
