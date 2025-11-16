@@ -58,4 +58,55 @@
             die();
         }
     }
+
+    if(isset($_GET['acao']) && $_GET['acao'] == 'deletarCliente' && isset($_GET['cpf'])) {
+        $cpf = $_GET['cpf'];
+        deletarCliente($cpf);
+        header('location:listarUsuario.php?status=deletado'); // Redireciona de volta para a lista
+        die();
+    }
+
+
+    // ----------------------------------------------------------------------
+    // --- UPDATE: COMENTÁRIO ---
+    // ----------------------------------------------------------------------
+    if(isset($_POST['acaoComentarioUpdate']) && $_POST['acaoComentarioUpdate'] == 'sim' && !empty($_POST['idComentario']) && !empty($_POST['inputComentario'])) {
+        $idComentario = $_POST['idComentario']; // Campo oculto no formulário de edição
+        $novoComentario = $_POST['inputComentario'];
+        
+        atualizarComentario($idComentario, $novoComentario);
+        header('location:listarComentario.php?status=atualizado'); // Redireciona para a lista
+        die();
+    }
+
+    // ----------------------------------------------------------------------
+    // --- DELETE: COMENTÁRIO ---
+    // ----------------------------------------------------------------------
+    if(isset($_GET['acao']) && $_GET['acao'] == 'deletarComentario' && isset($_GET['id'])) {
+        $idComentario = $_GET['id'];
+        deletarComentario($idComentario);
+        header('location:listarComentario.php?status=deletado'); 
+        die();
+    }
+
+    // ----------------------------------------------------------------------
+    // --- DELETE: RECEITA ---
+    // ----------------------------------------------------------------------
+    if(isset($_GET['acao']) && $_GET['acao'] == 'deletarReceita' && isset($_GET['id'])) {
+        $idReceita = $_GET['id'];
+        deletarReceita($idReceita);
+        header('location:listarReceita.php?status=deletado'); 
+        die();
+    }
+
+    // ----------------------------------------------------------------------
+    // --- DELETE: INGREDIENTES INSPIRAÇÃO ---
+    // ----------------------------------------------------------------------
+    if(isset($_GET['acao']) && $_GET['acao'] == 'deletarIngredientes' && isset($_GET['id'])) {
+        $id = $_GET['id'];
+        deletarIngredientesInspiracao($id);
+        header('location:listarIngredientes.php?status=deletado'); 
+        die();
+    }
+
 ?>

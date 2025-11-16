@@ -13,6 +13,40 @@ h2 {
     margin-top: 2rem;
 }
 
+.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+    padding: 8px;
+    background-color: rgb(240, 240, 195);
+}
+
+.btn1 {
+    border: 1px solid rgb(196, 28, 28);
+    background-color: rgb(196, 28, 28);
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 18px;
+}
+
+.logo img:nth-of-type(1) {
+    width: 140px;
+    height: 110px;
+    margin-left: 18vw;
+}
+
+.logo img:nth-of-type(2) {
+    width: 250px;
+    height: 60px;
+}
+
+#article-login img{
+    width: 40px;
+    height: 40px;
+    margin-left: 350px;
+}
 
 
 /* --- Container Principal --- */

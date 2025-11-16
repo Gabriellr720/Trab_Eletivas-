@@ -172,4 +172,87 @@ function listarIngredientesInspiracao() {
     return $ingredientes;
 }
 
+function inserirComentario($comentario){
+        $conexao = conectarBD(); 
+        // Supondo que 'inserecomentario' tem um ID de chave primária auto-incrementável (ex: id_comentario)
+        $consulta = "INSERT INTO inserecomentario (comentario) 
+                    VALUES ('$comentario')";
+        mysqli_query($conexao, $consulta); 
+    }
+
+    function retornarComentario(){
+        $conexao = conectarBD();
+        $consulta = "SELECT * FROM inserecomentario"; 
+        $listaComentario = mysqli_query($conexao, $consulta); 
+        return $listaComentario; 
+    }
+
+    // U - Atualizar Comentário (Requer o ID do comentário)
+    function atualizarComentario($idComentario, $novoComentario){
+        $conexao = conectarBD(); 
+        $consulta = "UPDATE inserecomentario SET comentario = '$novoComentario' WHERE id = '$idComentario'"; // Assumindo que a PK é 'id'
+        mysqli_query($conexao, $consulta); 
+    }
+
+    // D - Deletar Comentário (Requer o ID do comentário)
+    function deletarComentario($idComentario){
+        $conexao = conectarBD(); 
+        $consulta = "DELETE FROM inserecomentario WHERE id = '$idComentario'"; // Assumindo que a PK é 'id'
+        mysqli_query($conexao, $consulta); 
+    }
+
+    // ----------------------------------------------------------------------
+    // --- FUNÇÕES CRUD DE RECEITA ---
+    // ----------------------------------------------------------------------
+    // A função 'inserirReceita' já existe
+
+    // U - Atualizar Receita (Requer o ID da Receita)
+    function atualizarReceita($idReceita, $nomeUsuario, $nomeReceita, $dificuldade, $rendimento, $ingredientes, $modoPreparo, $caminhoDestino)
+    {
+        $conexao = conectarBD();
+        $consulta = "UPDATE enviarreceita SET 
+                    nome_usuario = '$nomeUsuario', 
+                    receita_nome = '$nomeReceita', 
+                    dificuldade = '$dificuldade', 
+                    rendimento_porcoes = '$rendimento', 
+                    ingredientes = '$ingredientes', 
+                    modo_preparo = '$modoPreparo', 
+                    foto_caminho = '$caminhoDestino'
+                    WHERE id_receita = '$idReceita'"; // Assumindo que a PK é 'id_receita'
+        mysqli_query($conexao, $consulta);
+    }
+    
+    // D - Deletar Receita (Requer o ID da Receita)
+    function deletarReceita($idReceita){
+        $conexao = conectarBD();
+        $consulta = "DELETE FROM enviarreceita WHERE id_receita = '$idReceita'"; // Assumindo que a PK é 'id_receita'
+        mysqli_query($conexao, $consulta);
+    }
+
+    // ----------------------------------------------------------------------
+    // --- FUNÇÕES CRUD DE INGREDIENTES DE INSPIRAÇÃO ---
+    // ----------------------------------------------------------------------
+    // A função 'inserirIngredientesInspiracao' já existe
+
+    // U - Atualizar Ingredientes de Inspiração
+    function atualizarIngredientesInspiracao($id, $ing1, $ing2, $ing3, $ing4, $ing5, $ing6) {
+        $conexao = conectarBD();
+        $consulta = "UPDATE ingredientes_inspiracao SET
+                     ingrediente1 = '$ing1', 
+                     ingrediente2 = '$ing2', 
+                     ingrediente3 = '$ing3', 
+                     ingrediente4 = '$ing4', 
+                     ingrediente5 = '$ing5', 
+                     ingrediente6 = '$ing6'
+                     WHERE id = '$id'";
+        mysqli_query($conexao, $consulta);
+    }
+
+    // D - Deletar Ingredientes de Inspiração
+    function deletarIngredientesInspiracao($id) {
+        $conexao = conectarBD();
+        $consulta = "DELETE FROM ingredientes_inspiracao WHERE id = '$id'";
+        mysqli_query($conexao, $consulta);
+    }
+
 ?>

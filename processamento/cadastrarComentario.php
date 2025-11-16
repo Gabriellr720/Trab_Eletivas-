@@ -25,6 +25,12 @@
     <main>
         <div class="cadastro-receita">
         <form method="POST" action="processamento.php">
+            <label for="idCpfUsuario">Seu CPF (Identificação)</label>
+            <input type="text" id="idCpfUsuario" name="inputCpfUsuario" 
+                   value="<?php echo htmlspecialchars($cpf_usuario_logado); ?>" 
+                   placeholder="Digite seu CPF (apenas números)" required>
+
+
             <label for="idComentario">Comentário do Usuário</label>
             <textarea name="inputComentario" id="idComentario" cols="90" rows="10"></textarea>
             <button type="submit" class="bnt-cadastro">Cadastrar</button>
