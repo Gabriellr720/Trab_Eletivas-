@@ -22,6 +22,7 @@
         $consulta = "INSERT INTO inserecomentario (comentario) 
                     VALUES ('$comentario')";
         mysqli_query($conexao, $consulta); 
+        mysqli_close($conexao);
     }
 
 

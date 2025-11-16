@@ -1,3 +1,8 @@
+<?php
+    require_once "funcaoDB.php"; 
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

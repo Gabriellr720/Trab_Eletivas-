@@ -44,14 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     
-    if(!empty($_POST['inputComentario'])){
-
-        $comentario = $_POST['inputComentario']; 
-
-        inserirComentario($comentario);
-        header('location:cadastrarComentario.php');
-        die(); 
-    }
+   
 
     if(!empty($_POST['inputComentario'])){
 
