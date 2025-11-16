@@ -23,6 +23,7 @@ body {
     padding: 10px;
     text-decoration: none;
     border-radius: 18px;
+    font-size: 14px;
 }
 
 .logo img:nth-of-type(1) {

@@ -14,8 +14,8 @@
 </head>
 <body>
      <div class="header">
-        <a href="../view/meuUsuario.html">Voltar</a>
-        <h1>Comentário</h1>
+        <a href="../view/meuUsuario.html">VOLTAR</a>
+        <h1>Comentários</h1>
     </div>
 
     <?php

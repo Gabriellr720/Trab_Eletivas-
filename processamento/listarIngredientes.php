@@ -14,7 +14,7 @@ $listaIngredientes = listarIngredientesInspiracao();
 </head>
 <body>
     <div class="header">
-        <a href="../view/meuUsuario.html">Voltar</a>
+        <a href="../view/meuUsuario.html">VOLTAR</a>
         <h1>🥕 Ingredientes de Inspiração</h1>
     </div>
     

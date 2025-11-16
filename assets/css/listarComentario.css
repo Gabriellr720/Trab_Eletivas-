@@ -26,7 +26,7 @@ body {
     background-color: rgb(196, 28, 28);
     color: rgb(255, 255, 255);
     padding: 10px 15px;
-    border-radius: 5px;
+    border-radius: 15px;
     font-weight: bold;
     transition: background-color 0.3s;
 }
@@ -37,8 +37,10 @@ body {
 
 h1 {
     color: rgb(196, 28, 28);
+    font-style: italic;
     font-size: 2em;
-    margin: 0;
+    margin: auto;
+    padding-right: 6vw;
 }
 
 section{

@@ -10,7 +10,7 @@ body {
     min-height: 100vh;
 }
 
-.header {
+header {
     width: 90%;
     max-width: 1000px;
     display: flex;
@@ -21,26 +21,24 @@ body {
    
 }
 
-
-
-.header a {
+header a {
     text-decoration: none;
     background-color: rgb(196, 28, 28);
     color: rgb(255, 255, 255);
     padding: 10px 15px;
-    border-radius: 5px;
+    border-radius: 18px;
     font-weight: bold;
     transition: background-color 0.3s;
 }
 
-.header a:hover {
+header a:hover {
     background-color: rgb(150, 20, 20);
 }
 
 h1 {
     color: rgb(196, 28, 28);
     font-size: 2em;
-    margin: 0;
+    margin: auto;
 }
 
 section{
@@ -53,53 +51,46 @@ section{
 }
 
 .btn-acao {
-    /* Faz o link se comportar como um bloco, permitindo que tenha largura e altura */
     display: inline-block; 
-    
-    /* Configurações visuais básicas */
-    padding: 5px 10px; /* Espaçamento interno */
-    margin: 5px;       /* Espaçamento externo */
+    padding: 5px 10px; 
+    margin: 5px;      
     border: none;
-    border-radius: 4px; /* Cantos arredondados */
-    cursor: pointer;    /* Ícone de mão ao passar o mouse */
-    text-decoration: none; /* Remove o sublinhado do link */
+    border-radius: 4px; 
+    cursor: pointer;    
+    text-decoration: none; 
     text-align: center;
     font-size: 14px;
     font-weight: bold;
-    
     display: flex;
     flex-direction: row;
-    /* Cores (Ajuste conforme o tema do seu site) */
-    color: white; /* Cor do texto */
-    background-color: #5cb85c; /* Cor de fundo padrão (verde para 'Editar') */
-    transition: background-color 0.3s ease; /* Transição suave de cor */
+    color: white; 
+    background-color: #5cb85c; 
+    transition: background-color 0.3s ease; 
 }
 
-/* Cor específica para Excluir */
-/* O ideal seria usar uma classe diferente (ex: .btn-excluir), mas usaremos a cor vermelha aqui */
 a[href*="deletarUsuario.php"] {
-    background-color: #d9534f; /* Vermelho para exclusão */
+    background-color: #d9534f; /
 }
 
-/* Efeito ao passar o mouse */
 .btn-acao:hover {
     opacity: 0.9;
 }    
 
 .container-botoes {
-    /* Ativa o Flexbox */
     display: flex; 
-    
-    /* Organiza os itens (botões) em linha (horizontal) */
     flex-direction: row; 
-    
-    /* Opcional: Adiciona um pequeno espaço entre eles */
     gap: 10px; 
-    
-    /* Opcional: Centraliza o contêiner de botões */
     justify-content: center;
     align-items: center; 
-    
-    /* Opcional: Um pouco de margem para afastar do restante do conteúdo */
     margin-top: 10px; 
+}
+
+.btn {
+    background-color: rgb(196, 28, 28);
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    margin-top: 20px;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 15px;
 }
