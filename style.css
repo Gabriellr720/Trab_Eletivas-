@@ -74,7 +74,6 @@ form a {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
     width: 100%;
     margin-bottom:30px;
 }
@@ -102,3 +101,17 @@ form a {
     margin: auto;
 }
 
+.btn2 {
+    margin: auto;
+    margin-top: 30px;
+}
+
+.btn2 button {
+    padding: 10px;
+    margin: auto;
+    width: 10vw;
+    border-color: white;
+    border-radius: 15px;
+    background-color: rgb(196, 28, 28);
+    color: rgb(240, 240, 195);
+}
