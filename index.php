@@ -32,7 +32,7 @@
                 <a href="view/redefinir.html">Esqueci minha senha</a>
             </form>
            <section class="btn">
-                <button type="submit" id="cuzao"><a href="processamento/listarUsuario.php">ENTRE</a></button>
+                <button type="submit" id="cuzao"><a href="view/home.html">ENTRE</a></button>
                 <button><a href="processamento/cadastroUsuario.php">CADASTRO</a></button>
            </section>
         </section>
