@@ -1,14 +1,16 @@
 body {
-    background-color: rgb(247, 247, 247);
+    background-color: rgb(240, 240, 195); 
     margin: 0;
-    margin-left: 23vw;
+    margin-left: 280px; 
     padding: 0;
     font-family: 'Verdana', 'Geneva', 'Tahoma', sans-serif;
     min-height: 100vh;
+    width: 80vw;
+    overflow: hidden;
 }
 
 nav {
-    background-color: rgb(240, 240, 195);
+    background-color: rgb(235, 225, 215);
     width: 280px;
     height: 100vh;
     position: fixed;
@@ -24,7 +26,7 @@ nav {
     justify-content: center;
     align-items: center;
     padding: 15px 0 20px 0;
-    background-color: rgb(240, 240, 195);
+    background-color: rgb(235, 225, 215);
 }
 
 .logo img:nth-of-type(1) {
@@ -73,27 +75,9 @@ nav {
     transform: translateY(-2px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-/*APAGAR DAQUI PRA BAIXO*/
-.exemplo {
-    width: 40vw;
-    border-radius: 15px;
-    margin-left: 14vw;
-    margin-top: 12vh;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-   
-}
 
-.p {
-    text-align: left;
+#banner {
+    width: 100vw;
+    height: 140vh;
+    overflow: hidden;
 }
-
-.exemplo img {
-    width: 220px;
-    height: 200px;
-    border-radius: 200px;
-}
-

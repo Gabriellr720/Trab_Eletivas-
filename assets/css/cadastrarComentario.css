@@ -1,4 +1,3 @@
-/* --- Estilos Gerais --- */
 body {
     margin: 0;
     padding: 0;
@@ -6,13 +5,53 @@ body {
     background-color: rgb(240, 240, 195);
 }
 
+.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+    padding: 8px;
+    background-color: rgb(240, 240, 195);
+}
+
+.logo img:nth-of-type(1) {
+    width: 140px;
+    height: 110px;
+    margin-left: 18vw;
+}
+
+.logo img:nth-of-type(2) {
+    width: 250px;
+    height: 60px;
+}
+
+#article-login img{
+    width: 40px;
+    height: 40px;
+    margin-left: 350px;
+}
+
+#image_header {
+    width: 100%;
+}
+
+.btn1 {
+    border: 1px solid rgb(196, 28, 28);
+    background-color: rgb(196, 28, 28);
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 18px;
+}
+
 h2 {
     text-align: center;
-    font-size: 2.5rem; /* Usar rem para acessibilidade */
+    font-size: 2.5rem; 
     color: rgb(196, 28, 28);
     margin-top: 2rem;
 }
 
+<<<<<<< HEAD
 .logo {
     display: flex;
     flex-direction: row;
@@ -51,38 +90,45 @@ h2 {
 
 /* --- Container Principal --- */
 /* Esta classe vai organizar o formulário e o botão */
+=======
+>>>>>>> 1e644fcb54cf6184bce1dbb14cf1e046dffc1e66
 .cadastro-receita {
     display: flex;
     align-items: center;
     flex-direction: column;
     width: 100%;
     padding: 1rem;
-    box-sizing: border-box; /* Garante que o padding não quebre o layout */
+    box-sizing: border-box; 
 }
 
-/* --- Formulário Interno --- */
-/* Precisamos forçar o <form> interno a ser uma coluna */
 .cadastro-receita form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%; /* Ocupa a largura para centralizar o conteúdo */
+    width: 100%; 
 }
 
-/* --- Label (Comentário do Usuário) --- */
 .cadastro-receita label {
     font-size: 1.1rem;
     font-weight: bold;
     color: #444;
-    margin-bottom: 10px; /* Espaço entre o label e a caixa de texto */
+    margin-bottom: 10px; 
 }
 
-
 button{
-    padding: 20px;
+    padding: 15px;
+    margin-top: 10px;
+    width: 8vw;
+    border-radius: 18px;
+    font-size: 14px;
+    font-weight: bold;
     color: white;
     background-color: rgb(196, 28, 28);
     border: solid rgb(240, 240, 195) 1px;
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 

@@ -26,7 +26,7 @@ body {
     background-color: rgb(196, 28, 28);
     color: rgb(255, 255, 255);
     padding: 10px 15px;
-    border-radius: 5px;
+    border-radius: 18px;
     font-weight: bold;
     transition: background-color 0.3s;
 }

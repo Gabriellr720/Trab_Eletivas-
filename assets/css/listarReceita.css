@@ -67,8 +67,8 @@ h1 {
     background-color: rgb(196, 28, 28);
     color: rgb(255, 255, 255);
     font-weight: bold;
-    font-size: small;
-    border-radius: 30px;
+    font-size: 14px;
+    border-radius: 18px;
 }
 
 .aviso{
