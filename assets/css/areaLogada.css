@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+    margin-top: 25vh;
+    color: rgb(196, 28, 28);
+    font-style: italic;
+}
+
+.escolha {
+    display: flex;
+    justify-content: space-around;
+}
+
+.escolha a {
+    margin: 20px;
+    text-decoration: none;
+    background-color: rgb(196, 28, 28);
+    color: rgb(240, 240, 195);
+    padding: 10px;
+    border-radius: 14px;
+    font-weight: bold;
+}

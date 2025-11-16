@@ -21,22 +21,24 @@
     </header>
 
     <main>
-        <section class="login-container">
-            <h2>Login</h2>
-            
-            <form  method="POST" action = "/processamento/processamento.php">  
-                <p>Nome de Usuário</p>
-                <input type="text" id="name" placeholder="" name="username">
-                <p>Senha</p>
-                <input type="password" id="password" placeholder="" name="password">
-                <a href="view/redefinir.html">Esqueci minha senha</a>
-            </form>
-           <section class="btn">
-                <button type="submit" id="cuzao"><a href="processamento/listarUsuario.php">ENTRE</a></button>
-                <button><a href="processamento/cadastroUsuario.php">CADASTRO</a></button>
-           </section>
+    <section class="login-container">
+        <h2>Login</h2>
+        
+        <form method="POST" action="processamento/login.php"> 
+            <p>Email</p>
+            <input type="text" id="email" placeholder="Seu Email" name="inputEmail">
+            <p>Senha</p>
+            <input type="password" id="password" placeholder="" name="inputSenha">
+            <a href="processamento/recuperarSenha.php">Esqueci minha senha</a>
+            <section class="btn2">
+                <button type="submit" class="bnt-login">ENTRE</button>
+            </section>
+        </form>
+        <section class="btn">
+            <button><a href="processamento/cadastroUsuario.php">CADASTRO</a></button>
         </section>
-    </main>
+    </section>
+</main>
     
 </body>
 </html>

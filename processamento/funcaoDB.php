@@ -9,8 +9,10 @@
         $conexao = conectarBD();
         
         $consulta = "INSERT INTO usuario (cpf, nome, sobrenome, telefone, email, senha, dataNasc)
-                    VALUES ('$cpf', '$nome', '$sobrenome', '$telefone', '$email', '$senha', '$dataNasc')"; 
-        mysqli_query($conexao, $consulta); 
+                 VALUES ('$cpf', '$nome', '$sobrenome', '$telefone', '$email', '$senha', '$dataNasc')"; 
+                 
+                mysqli_query($conexao, $consulta); 
+                mysqli_close($conexao); 
     }
 
     function inserirComentario($comentario){
@@ -41,35 +43,33 @@
 
     function deletarCliente($cpf){
         $conexao = conectarBD();
-        // Deleta o usuário baseado no CPF
+        
         $consulta = "DELETE FROM usuario WHERE cpf = '$cpf'";
         mysqli_query($conexao, $consulta);
     }
 
     function retornarClientePorCpf($cpf) {
-    // 1. Conexão com o Banco de Dados
+  
     $conexao = conectarBD(); 
 
-    // 2. Consulta SQL
+   
     $consulta = "SELECT * FROM USUARIO WHERE cpf = '$cpf'";
     
-    // 3. Execução da Consulta
+   
     $resultado = mysqli_query($conexao, $consulta);
     
-    // 4. Retorno dos Dados (como array associativo)
-    // Geralmente retorna apenas uma linha para busca por CPF
     if (mysqli_num_rows($resultado) > 0) {
         return mysqli_fetch_assoc($resultado);
     } else {
-        return false; // Retorna falso se não encontrar
+        return false; 
     }
     }
 
 
-    // --- FUNÇÃO PARA ATUALIZAR (UPDATE) ---
+    
     function atualizarCliente($cpfAntigo, $cpfNovo, $nome, $sobrenome, $telefone, $email, $senha, $dataNasc){
         $conexao = conectarBD();
-        // A senha deve ser HASHED (e.g., password_hash) antes de atualizar
+
         $consulta = "UPDATE usuario SET 
                     cpf = '$cpfNovo', 
                     nome = '$nome', 
@@ -93,7 +93,6 @@
     
         $resultado = mysqli_query($conexao, $consulta);
     
-        // Aqui se a query falhar, mostrará erro.
         if (!$resultado)
             {
                 die("Erro ao inserir receita: " . mysqli_error($conexao));
@@ -170,6 +169,25 @@ function listarIngredientesInspiracao() {
     }
     $conn->close(); 
     return $ingredientes;
+}
+
+function buscarUsuarioPorEmail($email){
+    $conexao = conectarBD();
+
+    $email_safe = mysqli_real_escape_string($conexao, $email);
+    
+    $consulta = "SELECT * FROM usuario WHERE email = '$email_safe'";
+    
+    $resultado = mysqli_query($conexao, $consulta);
+
+    if (mysqli_num_rows($resultado) > 0) {
+        $usuario = mysqli_fetch_assoc($resultado);
+    } else {
+        $usuario = false;
+    }
+
+    mysqli_close($conexao);
+    return $usuario;
 }
 
 ?>

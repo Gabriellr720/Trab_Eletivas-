@@ -24,7 +24,6 @@
   <main>
         <section class="cadastro">
                 <section class="cadastro1"> 
-                    <form>
                     <h3>Cadastro</h3>
                     <form method="POST" action="processamento.php">
                     <input type="text" placeholder="CPF" name="inputCPF">
