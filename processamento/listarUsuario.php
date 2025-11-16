@@ -41,9 +41,11 @@
             echo "<p> E-mail: ". $cliente["email"]. "</p>";
             echo "</section>";
              
-            echo "<a href='editarUsuario.php?cpf=" . $cliente["cpf"] . "' >[Editar]</a> ";
-             
-            echo "<a href='deletarUsuario.php?cpf=" . $cliente["cpf"] . "' onclick=\"return confirm('Tem certeza que deseja deletar o usuário " . $cliente["nome"] . "?');\">[Deletar]</a>";
+
+            echo "<div class='container-botoes'>"; 
+            echo "<a href='editarUsuario.php?cpf=" . $cliente["cpf"] . "' class='btn-acao'>[Editar]</a> "; 
+            echo "<a href='deletarUsuario.php?cpf=" . $cliente["cpf"] . "' class='btn-acao' onclick=\"return confirm('Tem certeza que deseja deletar o usuário " . $cliente["nome"] . "?');\">[Deletar]</a>";
+            echo "</div>";
         }
     ?>
     <a href="cadastroUsuario.php" class="btn">Cadastrar Novo Usuário</a>
