@@ -73,27 +73,6 @@ nav {
     transform: translateY(-2px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-/*APAGAR DAQUI PRA BAIXO*/
-.exemplo {
-    width: 40vw;
-    border-radius: 15px;
-    margin-left: 14vw;
-    margin-top: 12vh;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-   
-}
 
-.p {
-    text-align: left;
-}
 
-.exemplo img {
-    width: 220px;
-    height: 200px;
-    border-radius: 200px;
-}
 

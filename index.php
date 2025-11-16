@@ -22,7 +22,7 @@
 
     <main>
         <section class="login-container">
-            <h2>Login da Conta</h2>
+            <h2>Login</h2>
             
             <form  method="POST" action = "/processamento/processamento.php">  
                 <p>Nome de Usuário</p>
@@ -33,7 +33,7 @@
             </form>
            <section class="btn">
                 <button type="submit" id="cuzao"><a href="processamento/listarUsuario.php">ENTRE</a></button>
-                <button>CADASTRO</button>
+                <button><a href="processamento/cadastroUsuario.php">CADASTRO</a></button>
            </section>
         </section>
     </main>
