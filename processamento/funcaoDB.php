@@ -41,6 +41,14 @@
         return $listaCliente; 
     }
 
+    function retornarComentario(){
+
+        $conexao = conectarBD();
+        $consulta = "SELECT * FROM inserecomentario"; 
+        $listaComentario = mysqli_query($conexao, $consulta); 
+        return $listaComentario; 
+    }
+
     function deletarCliente($cpf){
         $conexao = conectarBD();
         
