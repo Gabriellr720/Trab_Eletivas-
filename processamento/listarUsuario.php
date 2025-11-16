@@ -7,6 +7,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/listarUsuario.css"> 
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon.png">
     <title>Document</title>
 </head>
 <body>
@@ -26,7 +28,7 @@
     ?> 
 
     <h1>Lista de Usuários</h1>
-    <a href="cadastroUsuario.php">Cadastrar Novo Usuário</a>
+   
     <hr>
     <?php
         $listaCliente = retornarCliente();
@@ -37,18 +39,15 @@
             echo "<p> Data Nascimento: ". $cliente["dataNasc"] . "</p>"; 
             echo "<p> Telefone: ". $cliente["telefone"] . "</p>";
             echo "<p> E-mail: ". $cliente["email"]. "</p>";
-
-            // --- BOTÕES DE AÇÃO ---
-            // Link para Edição, passando o CPF na URL (GET)
-            echo "<a href='editarUsuario.php?cpf=" . $cliente["cpf"] . "'>[Editar]</a> ";
-            
-            // Link para Deletar, passando o CPF na URL (GET)
-            // É ALTAMENTE recomendado adicionar uma confirmação em JavaScript antes de deletar!
+            echo "</section>";
+             
+            echo "<a href='editarUsuario.php?cpf=" . $cliente["cpf"] . "' >[Editar]</a> ";
+             
             echo "<a href='deletarUsuario.php?cpf=" . $cliente["cpf"] . "' onclick=\"return confirm('Tem certeza que deseja deletar o usuário " . $cliente["nome"] . "?');\">[Deletar]</a>";
-            
-            echo "</section>"; 
         }
     ?>
+    <a href="cadastroUsuario.php" class="btn">Cadastrar Novo Usuário</a>
+
 
 
 </body>

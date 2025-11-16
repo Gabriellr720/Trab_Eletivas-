@@ -46,6 +46,25 @@
         mysqli_query($conexao, $consulta);
     }
 
+    function retornarClientePorCpf($cpf) {
+    // 1. Conexão com o Banco de Dados
+    $conexao = conectarBD(); 
+
+    // 2. Consulta SQL
+    $consulta = "SELECT * FROM USUARIO WHERE cpf = '$cpf'";
+    
+    // 3. Execução da Consulta
+    $resultado = mysqli_query($conexao, $consulta);
+    
+    // 4. Retorno dos Dados (como array associativo)
+    // Geralmente retorna apenas uma linha para busca por CPF
+    if (mysqli_num_rows($resultado) > 0) {
+        return mysqli_fetch_assoc($resultado);
+    } else {
+        return false; // Retorna falso se não encontrar
+    }
+    }
+
 
     // --- FUNÇÃO PARA ATUALIZAR (UPDATE) ---
     function atualizarCliente($cpfAntigo, $cpfNovo, $nome, $sobrenome, $telefone, $email, $senha, $dataNasc){
