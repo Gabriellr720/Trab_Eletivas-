@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 15/11/2025 às 21:21
+-- Tempo de geração: 17/11/2025 às 00:22
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.0.30
 
@@ -38,14 +38,6 @@ CREATE TABLE `enviarreceita` (
   `foto_caminho` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Despejando dados para a tabela `enviarreceita`
---
-
-INSERT INTO `enviarreceita` (`id`, `nome_usuario`, `receita_nome`, `dificuldade`, `rendimento_porcoes`, `ingredientes`, `modo_preparo`, `foto_caminho`) VALUES
-(10, 'fulano2', 'bolo de murango2', 'Fácil', 2, 'dsdsd', 'dsdsds', '../uploads/bolo.jpg'),
-(11, 'dsds', 'receitateste3', 'Difícil', 2, 'gfgfg', 'fgfgf', '../uploads/bolo2.jpg');
-
 -- --------------------------------------------------------
 
 --
@@ -62,15 +54,6 @@ CREATE TABLE `ingredientes_inspiracao` (
   `ingrediente6` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Despejando dados para a tabela `ingredientes_inspiracao`
---
-
-INSERT INTO `ingredientes_inspiracao` (`id`, `ingrediente1`, `ingrediente2`, `ingrediente3`, `ingrediente4`, `ingrediente5`, `ingrediente6`) VALUES
-(17, 'frango', 'arroz', 'feijão', 'macarrao', 'ovo', 'leite'),
-(18, 'arroz', 'ads', 'fatec', '', '', ''),
-(19, '', '', '', 'ingrediente 4', 'ingrediente 5', 'ingrediente 6');
-
 -- --------------------------------------------------------
 
 --
@@ -81,15 +64,6 @@ CREATE TABLE `inserecomentario` (
   `id_comentario` int(10) NOT NULL,
   `comentario` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `inserecomentario`
---
-
-INSERT INTO `inserecomentario` (`id_comentario`, `comentario`) VALUES
-(1, 'Sallllve '),
-(2, 'Sallllve '),
-(3, 'jwbvsbv');
 
 -- --------------------------------------------------------
 
@@ -112,10 +86,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`cpf`, `nome`, `sobrenome`, `telefone`, `email`, `senha`, `dataNasc`) VALUES
-('091487314', 'wnjbvwbvou', 'wnvwp vo', '51651884', 'fwebg wbg', 'wkjg bg', '2008-02-10'),
-('1234567', 'julio', 'cleber', '1899999999', 'cleber@gmail.com ', '123456', '2004-08-05'),
-('321654', 'rojer', 'opejtjjt', '878545165', 'sgwghethrj', 'w484g 4e', '2025-11-04'),
-('87/54651', 'sagwg', 'tjrthjaehj', '467561614', 'ghaeheh', '4541987987', '2025-10-30');
+('98989898', 'Yuri', 'fodão', '1899933333', 'yuri1@hotmail.com', '123', '2025-11-21');
 
 --
 -- Índices para tabelas despejadas
