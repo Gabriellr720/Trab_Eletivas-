@@ -1,14 +1,13 @@
 <?php
     require_once "funcaoDB.php"; 
 
-    // Verifica se um CPF foi passado via URL
     if(!isset($_GET['cpf']) || empty($_GET['cpf'])){
-        header('location:listarUsuario.php'); // Redireciona se não tiver CPF
+        header('location:listarUsuario.php'); 
         die();
     }
 
     $cpf = $_GET['cpf'];
-    $cliente = retornarClientePorCpf($cpf); // Nova função criada em funcaoDB.php
+    $cliente = retornarClientePorCpf($cpf); 
 
     if(!$cliente){
         echo "Usuário não encontrado!";
@@ -17,7 +16,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
