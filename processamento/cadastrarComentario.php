@@ -1,6 +1,3 @@
-<?php
-    require_once "funcaoDB.php"; 
-?>
 
 
 <!DOCTYPE html>
